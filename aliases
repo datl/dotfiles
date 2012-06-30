@@ -17,29 +17,22 @@ alias giff="git diff"
 alias upsubs="git submodule foreach git pull origin master"
 
 # rails
-alias sc="rails c"
-alias ss="rails s"
-alias sg="rails g"
 alias scaffold="rails g scaffold"
 alias migrate="rake db:migrate db:test:clone"
 alias remigrate="rake db:migrate:redo db:test:clone"
 alias rst="touch tmp/restart.txt"
 alias tlog="tail -f log/development.log"
 
-# bundle
-alias b="bundle"
-alias be="bundle exec"
-alias bake="bundle exec rake"
-alias s="bundle exec rspec"
-
-# vim
+# editors
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias vi="vim"
-alias e="vim"
-alias ge="mvim"
+alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+alias e="emacsclient"
 
 # misc
-alias c="clear"
-alias ls="ls -p"
-alias la="ls -A"
-alias ll="ls -alAghp"
-alias untar="tar -xzvf"
+alias cd=" cd"
+alias ls=" ls -p"
+alias la=" ls -A"
+alias ll=" ls -alAghp"
+alias gemset="rvm gemset"
+alias fortune="fortune literature"

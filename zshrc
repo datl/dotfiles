@@ -1,7 +1,5 @@
 # ~/.zshrc
 
-source ~/.profile
-
 # Includes
 autoload colors && colors
 autoload -Uz vcs_info
@@ -10,7 +8,6 @@ autoload -U complist
 
 # Bind <C-r> to history search
 bindkey "^r" history-incremental-search-backward
-
 
 # Load aliases
 source ~/.aliases
@@ -37,6 +34,7 @@ setopt AUTO_CD
 setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_SPACE
 
 #
 # ANSI Color Codes
@@ -75,15 +73,15 @@ function precmd {
     prompt=$RED
   fi
 
-  cursor="%{$prompt%}⚡%{$CLEAR%}"
+  cursor="%{$prompt%}%#%{$CLEAR%}"
   vcs_info 'prompt'
 }
 
 #
-# Set Prompts
+# Set prompts
 #
 PROMPT=" %~ "'${vcs_info_msg_0_}${cursor}'" %{$CLEAR%}"
-RPROMPT='%T'
+RPROMPT='$(~/.rvm/bin/rvm-prompt)'
 
 # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
